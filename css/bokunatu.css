@@ -1,0 +1,649 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {}
+
+html {
+    font-family: "Inconsolata", monospace;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #3584bb;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #84F9F3;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 24px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 80;
+    background-color: #3584bb;
+    transition: all 0.5s;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;
+}
+
+.site-title {
+    color: #000;
+    font-family: "Zen Kurenaido";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container {
+    margin: 0 10%;
+    align-items: center;
+}
+
+.boku-top {}
+
+.boku-top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 60px;
+    min-height: 100vh;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.boku-top-ttl {
+    color: #000;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.boku-top-txt {
+    color: #000;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .boku-top-ttl {
+        font-size: 28px;
+    }
+
+    .boku-top-txt {
+        font-size: 20px;
+    }
+
+    .boku-top-content {
+        gap: 40px;
+    }
+}
+
+.blur-background-1 {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #018BD6 30%,  
+    #018BD6 70%,
+    transparent
+  );
+}
+
+.boku-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.boku-mid-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 576px;
+    width: 100%;
+}
+
+.boku-mid-ttl {
+    color: #FFF;
+    text-align: center;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.boku-mid-txt {
+    color: #FFF;
+    text-align: center;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .boku-mid-ttl {
+        font-size: 28px;
+    }
+
+    .boku-mid-txt {
+        font-size: 20px;
+    }
+
+    .boku-mid-content {
+        gap: 24px;
+    }
+}
+
+
+.boku-list-eve {
+    display: flex;
+    width: 1352px;
+    flex-direction: column;
+    align-items: center;
+    gap: 65px;
+}
+
+.boku-list-eve-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
+    gap: 64px;
+}
+
+.boku-list-eve-top-ttl {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 200px;
+}
+
+.boku-list-eve-top-txt {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 70px;
+}
+
+.boku-list-eve-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    margin-right: calc(50% - 47vw);
+}
+
+.boku-list-eve-img img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boku-list-eve-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.boku-list-eve-solo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 34px 16px;
+    flex-wrap: wrap;
+    margin-top: 90px;
+
+}
+
+.boku-list-eve-1,
+.boku-list-eve-2,
+.boku-list-eve-3,
+.boku-list-eve-4,
+.boku-list-eve-5,
+.boku-list-eve-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    min-width: 300px;
+    width: calc((100% - 16px) / 2);
+    text-align: center;
+}
+
+.boku-list-eve-txt-1,
+.boku-list-eve-txt-2,
+.boku-list-eve-txt-3,
+.boku-list-eve-txt-4,
+.boku-list-eve-txt-5,
+.boku-list-eve-txt-6 {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+    margin-right: calc(50% - 48vw);
+}
+
+
+.boku-list-eve-bot {}
+
+.boku-list-eve-bot-txt {
+    color: #000;
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: calc(50% - 30vw);
+}
+
+@media (max-width: 1600px) {
+    .boku-list-eve {
+        width: 100vw;
+        gap: 30px;
+    }
+
+    .boku-list-eve-top {
+        width: 100vw;
+        gap: 30px;
+    }
+
+    .boku-list-eve-top-ttl {
+        font-size: 22px;
+        margin-top: 80px;
+    }
+
+    .boku-list-eve-top-txt {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .boku-list-eve-img {
+        height: 200px;
+        margin-right: 0;
+    }
+
+    .boku-list-eve-img img {
+        object-fit: contain;
+    }
+
+    .boku-list-eve-solo {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .boku-list-eve-1,
+    .boku-list-eve-2,
+    .boku-list-eve-3,
+    .boku-list-eve-4,
+    .boku-list-eve-5,
+    .boku-list-eve-6 {
+        width: 100%;
+        min-width: unset;
+        gap: 15px;
+    }
+
+    .boku-list-eve-txt-1,
+    .boku-list-eve-txt-2,
+    .boku-list-eve-txt-3,
+    .boku-list-eve-txt-4,
+    .boku-list-eve-txt-5,
+    .boku-list-eve-txt-6 {
+        font-size: 16px;
+        margin-right: 0;
+        white-space: normal;
+    }
+
+    .boku-list-eve-bot-txt {
+        font-size: 16px;
+        margin-right: 0;
+    }
+}
+
+.boku-list-musi {
+    background-color: #018BD6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 300px;
+    gap: 200px;
+}
+
+.boku-list-musi-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1252px;
+    max-width: 90%;
+    gap: 100px;
+}
+
+.boku-list-musi-top-ttl {
+    color: #ffe600;
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 36px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 200px;
+}
+
+.boku-list-musi-top-txt {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+
+.boku-list-musi-1,
+.boku-list-musi-2,
+.boku-list-musi-3 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.boku-list-musi-2 {
+    transform: translateX(-50px);
+}
+
+.boku-list-musi-3 {
+    transform: translateX(50px);
+}
+
+.boku-list-musi-1-ttl,
+.boku-list-musi-2-ttl,
+.boku-list-musi-3-ttl {
+    color: #ffe600;
+    font-family: "Zen Kurenaido";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+
+.boku-list-musi-1-txt,
+.boku-list-musi-2-txt{
+    color: #ffffff;
+    font-family: "Zen Kurenaido";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+.boku-list-musi-3-txt {
+    color: #ffffff;
+    font-family: "Zen Kurenaido";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    margin-bottom: 230px;
+}
+
+@media screen and (max-width: 1500px) {
+    .boku-list-musi {
+        margin-top: 150px;
+        gap: 100px;
+    }
+
+    .boku-list-musi-top {
+        width: 100%;
+        gap: 60px;
+    }
+
+    .boku-list-musi-top-ttl {
+        font-size: 28px;
+    }
+
+    .boku-list-musi-top-txt {
+        font-size: 24px;
+    }
+
+    .boku-list-musi-1,
+    .boku-list-musi-2,
+    .boku-list-musi-3 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transform: none;
+        gap: 16px;
+    }
+
+    .boku-list-musi-1-ttl,
+    .boku-list-musi-2-ttl,
+    .boku-list-musi-3-ttl,
+    .boku-list-musi-1-txt,
+    .boku-list-musi-2-txt,
+    .boku-list-musi-3-txt {
+        font-size: 20px;
+    }
+}
+
+.blur-background-2 {
+  height: 2000px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #000000 50%,
+    #000000 100%,
+    transparent
+  );
+}
+.boku-bot {
+    display: flex;
+    width: 100%;
+    padding: 207px 5% 188px 5%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+
+.boku-bot-content {}
+
+.boku-bot-txt-content {
+    display: flex;
+    width: 100%;
+    max-width: 1152px;
+    flex-direction: column;
+    align-items: center;
+    gap: 184px;
+    flex-shrink: 0;
+}
+
+.boku-bot-ttl,
+.boku-bot-txt-1,
+.boku-bot-txt-2 {
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.boku-bot-ttl {
+    color: #F00;
+    font-size: 36px;
+}
+
+.boku-bot-txt-1 {
+    color: #F00;
+    font-size: 32px;
+}
+
+.boku-bot-txt-2 {
+    color: #FFF;
+    font-size: 32px;
+}
+
+@media screen and (max-width: 1024px) {
+    .boku-bot {
+        padding: 150px 5% 150px 5%;
+        margin-top: 150px;
+    }
+
+    .boku-bot-txt-content {
+        gap: 120px;
+    }
+
+    .boku-bot-ttl {
+        font-size: 30px;
+    }
+
+    .boku-bot-txt-1,
+    .boku-bot-txt-2 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .boku-bot {
+        padding: 100px 5% 100px 5%;
+        margin-top: 100px;
+    }
+
+    .boku-bot-txt-content {
+        gap: 80px;
+    }
+
+    .boku-bot-ttl {
+        font-size: 24px;
+    }
+
+    .boku-bot-txt-1,
+    .boku-bot-txt-2 {
+        font-size: 20px;
+    }
+}
+
+
